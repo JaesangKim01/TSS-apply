@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href=/stylesheets/textstyle.css />
+</head>
+<body>
+    <h1 class="text-center">To-Do List</h1>
+    <section>
+        <article class="border-3px text-center">
+            <form name="to-do list" method="post" action="/">
+                What To Do: <input type="text" name="task" > 
+                Deadline:<input type="date" name="deadline" min="2022-03-01" max="2022-12-31">
+                <input type="hidden" name="method" value="POST"/>
+                <button type="submit"><b>Add</b></button>
+            </form>
+        </article>
+
+        <div id="section2"class="border-3px margin-top-60px padding-top-bottom-40px">
+            <div id="my-to-do-list" class="border-flex-center">
+                <table>
+                    <tr>
+                        <th class="table-border" id="task-size"><input type="checkbox">Task</th>
+                        <th class="table-border" id="deadline-size">Deadline</th>
+                        <!-- <th><button type="submit"><b>x</b></button></th> -->
+                    </tr>
+
+                    <% if(data.length){ 
+                        for(var i = 0; i< data.length; i++) {%>  
+                        <tr>
+                            <form id=<%= data[i].id  %> method="post" ><input type="hidden" name="id"  value=<%= data[i].id %> /></form>
+                            <td><input id="textarea" form=<%= data[i].id %> type="text" name="task" value=<%= data[i].task %> /></td>
+                            <td><input form=<%= data[i].id %> type="date" name="deadline" value=<%= data[i].deadline %> /></td>
+                            <td><input form=<%= data[i].id %> type="submit" name="method" value="EDIT" action="/"/></td>
+                            <td><input form=<%= data[i].id %> type="submit" name="method" value="DELETE" action="/"/></td>
+                        </tr>
+                        <% }
+                                 
+                         }else{ %>
+                             <tr>
+                                <td colspan="4">No task</td>
+                             </tr>
+                          <% } %>    
+                </table>
+
+                
+            </div>
+
+        </div>
+    </section>
+
+
+    </form>
+</body>
+<script src="/javascripts/text.js"></script>
+
+</html>

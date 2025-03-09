@@ -1,0 +1,63 @@
+.text-center{
+    text-align: center;
+
+    
+}
+
+.border-3px{
+    border: 3px solid black;
+}
+
+form{
+    margin: 20px;
+}
+
+.margin-top-20px{
+    margin-top: 20px;
+}
+
+.margin-top-60px{
+    margin-top: 60px;
+}
+
+#my-to-do-list{
+    
+}
+
+.table-border{
+    border: 1px solid black;
+    border-collapse: separate;
+}
+
+.border-flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+#task-size{
+    box-sizing: border-box;
+    width: 500px;
+}
+
+#deadline-size{
+    box-sizing: border-box;
+    width: 100px;
+}
+
+#section2{
+    min-height: min-content;
+    max-height: max-content;
+}
+
+.padding-top-bottom-40px{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+table, td, th, tr{
+    border: 1px solid black;
+}
+
+#textarea{
+    width:485px
+}
